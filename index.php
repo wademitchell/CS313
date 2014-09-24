@@ -84,7 +84,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Assignments</h2>
-                <p>I can put my assignments here like this same project.</p>
+                <p>I can put my assignments here like this sample project.</p>
                 <h2>Clean Top 40 Chart</h2>
                 <p>Updated weekly, here are the cleanest, most popular hits from today's top artists.</p>
             </div>
