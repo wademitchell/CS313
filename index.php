@@ -83,6 +83,8 @@
     <section id="chart" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
+                <h2>Assignments</h2>
+                <p>I can put my assignments here like this same project.</p>
                 <h2>Clean Top 40 Chart</h2>
                 <p>Updated weekly, here are the cleanest, most popular hits from today's top artists.</p>
             </div>
@@ -94,6 +96,8 @@
         <div class="about-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
+                    <h2>About Wade</h2>
+                    <p>Hi, I'm Wade Mitchell. I'm a Web Development & Deign major with BYUI. I currently live in Oregon. This is my CS 313 project.</p>
                     <h2>Why clean hits?</h2>
                     <p>We are prudes.</p>
                 </div>
@@ -107,6 +111,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>We are out there.</h2>
                 <p>Follow us on Facebook and Twitter.</p>
+                <p>Needs to be developed.</p>
                     <ul class="list-inline banner-social-buttons">
                     <li>
                         <a href="https://twitter.com" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
