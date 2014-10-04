@@ -53,7 +53,7 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#assignments">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -83,8 +83,7 @@
     <section id="chart" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Assignments</h2>
-                <p>I can put my assignments here like this sample project.</p>
+                
                 <h2>Clean Top 40 Chart</h2>
                 <p>Updated weekly, here are the cleanest, most popular hits from today's top artists.</p>
             </div>
@@ -106,9 +105,12 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
+    <section id="assignments" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
+                <h2>Assignments</h2>
+                <p><a href="http://php-wademitchell.rhcloud.com/survey/index.html">2.03 ASSIGNMENT
+PHP SURVEY</a></p>
                 <h2>We are out there.</h2>
                 <p>Follow us on Facebook and Twitter.</p>
                 <p>Needs to be developed.</p>
