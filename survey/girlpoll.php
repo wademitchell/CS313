@@ -23,7 +23,7 @@ $melina = $array[5];
 
 if ($vote3 == 0) {
   $vesper = $vesper + 1;
-
+}
 if ($vote3 == 1) {
   $tracy = $tracy + 1;
 }
