@@ -142,7 +142,9 @@ Sean Connery:
 <input type="radio" name="vote" value="5" onclick="getVote(this.value)">
 </form>
 </div>
+                        <br>
 <div id="poll2">
+    <br>
 <h3>What Is Your Favorite Bond Movie?</h3>
 <form>
 Dr. No:
@@ -159,7 +161,9 @@ Dr. No:
 <input type="radio" name="vote2" value="5" onclick="getVote2(this.value)">
 </form>
 </div>
+                        <br>
 <div id="poll3">
+    <br>
 <h3>Who Is Your Favorite Bond Girl?</h3>
 <form>
 Vesper Lynd:
@@ -176,7 +180,9 @@ Vesper Lynd:
 <input type="radio" name="vote3" value="5" onclick="getVote3(this.value)">
 </form>
 </div>
+                        <br>
 <div id="poll4">
+    <br>
 <h3>Who Is Your Favorite Bond Villain?</h3>
 <form>
 Jaws:
