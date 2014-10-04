@@ -53,7 +53,7 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#assignments">Contact</a>
+                        <a class="page-scroll" href="#assignments">Assignments</a>
                     </li>
                 </ul>
             </div>
