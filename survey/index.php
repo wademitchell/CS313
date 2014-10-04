@@ -21,7 +21,64 @@
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-
+<script>
+function getVote(int) {
+  if (window.XMLHttpRequest) {
+    xmlhttp=new XMLHttpRequest();
+  } else {  
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("poll").innerHTML=xmlhttp.responseText;
+    }
+  }
+  xmlhttp.open("POST","bondpoll.php?vote="+int,true);
+  xmlhttp.send();
+}
+function getVote2(int) {
+  if (window.XMLHttpRequest) {
+    xmlhttp=new XMLHttpRequest();
+  } else {  
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("poll2").innerHTML=xmlhttp.responseText;
+    }
+  }
+  xmlhttp.open("POST","moviepoll.php?vote2="+int,true);
+  xmlhttp.send();
+}
+function getVote3(int) {
+  if (window.XMLHttpRequest) {
+    xmlhttp=new XMLHttpRequest();
+  } else {  
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("poll3").innerHTML=xmlhttp.responseText;
+    }
+  }
+  xmlhttp.open("POST","girlpoll.php?vote3="+int,true);
+  xmlhttp.send();
+}
+function getVote4(int) {
+  if (window.XMLHttpRequest) {
+    xmlhttp=new XMLHttpRequest();
+  } else {  
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("poll4").innerHTML=xmlhttp.responseText;
+    }
+  }
+  xmlhttp.open("POST","villainpoll.php?vote4="+int,true);
+  xmlhttp.send();
+}
+</script>
 
 </head>
 
@@ -68,11 +125,74 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">HELLO WORLD! Clean Top 40</h1>
-                        <p class="intro-text">Not your parent's Top 40, but a Top 40 they approve of.<br>All the current clean hits, by the most popular acts.</p>
-                        <a href="#chart" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
+                        <div id="poll">
+<h3>Who Is Your Favorite James Bond?</h3>
+<form>
+Sean Connery:
+<input type="radio" name="vote" value="0" onclick="getVote(this.value)">
+<br>George Lazenby:
+<input type="radio" name="vote" value="1" onclick="getVote(this.value)">
+<br>Roger Moore:
+<input type="radio" name="vote" value="2" onclick="getVote(this.value)">
+<br>Timothy Dalton:
+<input type="radio" name="vote" value="3" onclick="getVote(this.value)">
+<br>Pierce Brosnan:
+<input type="radio" name="vote" value="4" onclick="getVote(this.value)">
+<br>Daniel Craig:
+<input type="radio" name="vote" value="5" onclick="getVote(this.value)">
+</form>
+</div>
+<div id="poll2">
+<h3>What Is Your Favorite Bond Movie?</h3>
+<form>
+Dr. No:
+<input type="radio" name="vote2" value="0" onclick="getVote2(this.value)">
+<br>On Her Majesty's Secret Service:
+<input type="radio" name="vote2" value="1" onclick="getVote2(this.value)">
+<br>Live and Let Die:
+<input type="radio" name="vote2" value="2" onclick="getVote2(this.value)">
+<br>The Living Daylights:
+<input type="radio" name="vote2" value="3" onclick="getVote2(this.value)">
+<br>Goldeneye:
+<input type="radio" name="vote2" value="4" onclick="getVote2(this.value)">
+<br>Casino Royale:
+<input type="radio" name="vote2" value="5" onclick="getVote2(this.value)">
+</form>
+</div>
+<div id="poll3">
+<h3>Who Is Your Favorite Bond Girl?</h3>
+<form>
+Vesper Lynd:
+<input type="radio" name="vote3" value="0" onclick="getVote3(this.value)">
+<br>Teresa Di Vicenzo (Tracy Bond):
+<input type="radio" name="vote3" value="1" onclick="getVote3(this.value)">
+<br>Jill Masterson:
+<input type="radio" name="vote3" value="2" onclick="getVote3(this.value)">
+<br>Tatiana Romanova:
+<input type="radio" name="vote3" value="3" onclick="getVote3(this.value)">
+<br>Anya Amasova:
+<input type="radio" name="vote3" value="4" onclick="getVote3(this.value)">
+<br>Melina Havelock:
+<input type="radio" name="vote3" value="5" onclick="getVote3(this.value)">
+</form>
+</div>
+<div id="poll4">
+<h3>Who Is Your Favorite Bond Villain?</h3>
+<form>
+Jaws:
+<input type="radio" name="vote4" value="0" onclick="getVote4(this.value)">
+<br>Oddjob:
+<input type="radio" name="vote4" value="1" onclick="getVote4(this.value)">
+<br>Goldfinger:
+<input type="radio" name="vote4" value="2" onclick="getVote4(this.value)">
+<br>Ernst Stavro Blofeld:
+<input type="radio" name="vote4" value="3" onclick="getVote4(this.value)">
+<br>Le Chiffre:
+<input type="radio" name="vote4" value="4" onclick="getVote4(this.value)">
+<br>Francisco Scaramanga:
+<input type="radio" name="vote4" value="5" onclick="getVote4(this.value)">
+</form>
+</div>
                     </div>
                 </div>
             </div>
