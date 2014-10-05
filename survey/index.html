@@ -56,7 +56,12 @@ function getVote(int) {
     }
   }
   xmlhttp.open("POST","bondpoll.php?vote="+int,true);
-  xmlhttp.send();
+  if(!getCookie("voted")){
+    xmlhttp.send();
+    }
+    else{
+    alert("you already voted!")
+    }
 }
 function getVote2(int) {
   if (window.XMLHttpRequest) {
