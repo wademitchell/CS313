@@ -164,7 +164,7 @@ function getVote4(int) {
 </script>
 </head>
 
-<body onload="readVote();">
+<body>
     <!-- Navigation 
     <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
         <div class="container">
@@ -201,7 +201,7 @@ function getVote4(int) {
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-12">
-               <div id="poll">
+               <div id="poll" onload="readVote();">
                   
 <h4>Who Is Your Favorite James Bond?</h4>
 <form>
@@ -222,7 +222,7 @@ Sean Connery:
 <input type="button" value="See Results" onclick="getVote(this.value)">
 </form>
 </div>                     
-<div id="poll2">
+<div id="poll2"onload="readVote2();">
 <h4>What Is Your Favorite Bond Movie?</h4>
 <form>
 Dr. No:
@@ -242,7 +242,7 @@ Dr. No:
 <input type="button" value="See Results" onclick="getVote2(this.value)">
 </form>
 </div>  
-<div id="poll3">
+<div id="poll3"onload="readVote3();">
 <h4>Who Is Your Favorite Bond Girl?</h4>
 <form>
 Vesper Lynd:
@@ -262,7 +262,7 @@ Vesper Lynd:
 <input type="button" value="See Results" onclick="getVote3(this.value)">
 </form>
 </div>  
-<div id="poll4">
+<div id="poll4"onload="readVote4();">
 <h4>Who Is Your Favorite Bond Villain?</h4>
 <form>
 Jaws:
