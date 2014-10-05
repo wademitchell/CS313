@@ -55,7 +55,7 @@ function getVote(int) {
       document.getElementById("poll").innerHTML=xmlhttp.responseText;
     }
   }
-  xmlhttp.open("POST","bondpoll.php?vote="+int,true);
+  xmlhttp.open("GET","bondpoll.php?vote="+int,true);
   if(!getCookie("voted")){
     xmlhttp.send();
     }
