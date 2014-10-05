@@ -47,7 +47,7 @@ fputs($fp,$insertvote);
 fclose($fp);
 ?>
 
-<h3>Who Is Your Favorite Bond Girl?</h3>
+<h4>Who Is Your Favorite Bond Girl?</h4>
 <table>
 <tr>
 <td>Vesper Lynd:</td>

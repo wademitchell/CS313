@@ -47,7 +47,7 @@ fputs($fp,$insertvote);
 fclose($fp);
 ?>
 
-<h3>Who Is Your Favorite Bond Villain?</h3>
+<h4>Who Is Your Favorite Bond Villain?</h4>
 <table>
 <tr>
 <td>Jaws:</td>

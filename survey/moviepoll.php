@@ -47,7 +47,7 @@ fputs($fp,$insertvote);
 fclose($fp);
 ?>
 
-<h3>What Is Your Favorite Bond Movie?</h3>
+<h4>What Is Your Favorite Bond Movie?</h4>
 <table>
 <tr>
 <td>Dr. No:</td>
