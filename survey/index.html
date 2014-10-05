@@ -42,7 +42,7 @@ xmlhttp.onreadystatechange = function()
     document.getElementById("poll").innerHTML=xmlhttp.responseText;
     }
   }
-xmlhttp.open("POST","poll_vote_read.php",true);
+xmlhttp.open("POST","bondpoll.php",true);
 xmlhttp.send();
 }
 function getVote(int) {
