@@ -45,6 +45,66 @@ xmlhttp.onreadystatechange = function()
 xmlhttp.open("POST","bondpoll.php",true);
 xmlhttp.send();
 }
+        function readVote2()
+{
+if (window.XMLHttpRequest)
+  {
+  xmlhttp = new XMLHttpRequest();
+  }
+else
+  {
+  xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange = function()
+  {
+  if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+    {
+    document.getElementById("poll2").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("POST","moviepoll.php",true);
+xmlhttp.send();
+}
+        function readVote3()
+{
+if (window.XMLHttpRequest)
+  {
+  xmlhttp = new XMLHttpRequest();
+  }
+else
+  {
+  xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange = function()
+  {
+  if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+    {
+    document.getElementById("poll3").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("POST","girlpoll.php",true);
+xmlhttp.send();
+}
+        function readVote4()
+{
+if (window.XMLHttpRequest)
+  {
+  xmlhttp = new XMLHttpRequest();
+  }
+else
+  {
+  xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange = function()
+  {
+  if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+    {
+    document.getElementById("poll4").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("POST","villainpoll.php",true);
+xmlhttp.send();
+}
 function getVote(int) {
   if (window.XMLHttpRequest) {
     xmlhttp=new XMLHttpRequest();
