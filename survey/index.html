@@ -25,86 +25,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script>
-        function readVote()
-{
-if (window.XMLHttpRequest)
-  {
-  xmlhttp = new XMLHttpRequest();
-  }
-else
-  {
-  xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.onreadystatechange = function()
-  {
-  if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-    {
-    document.getElementById("poll").innerHTML=xmlhttp.responseText;
-    }
-  }
-xmlhttp.open("POST","bondpoll.php",true);
-xmlhttp.send();
-}
-        function readVote2()
-{
-if (window.XMLHttpRequest)
-  {
-  xmlhttp = new XMLHttpRequest();
-  }
-else
-  {
-  xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.onreadystatechange = function()
-  {
-  if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-    {
-    document.getElementById("poll2").innerHTML=xmlhttp.responseText;
-    }
-  }
-xmlhttp.open("POST","moviepoll.php",true);
-xmlhttp.send();
-}
-        function readVote3()
-{
-if (window.XMLHttpRequest)
-  {
-  xmlhttp = new XMLHttpRequest();
-  }
-else
-  {
-  xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.onreadystatechange = function()
-  {
-  if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-    {
-    document.getElementById("poll3").innerHTML=xmlhttp.responseText;
-    }
-  }
-xmlhttp.open("POST","girlpoll.php",true);
-xmlhttp.send();
-}
-        function readVote4()
-{
-if (window.XMLHttpRequest)
-  {
-  xmlhttp = new XMLHttpRequest();
-  }
-else
-  {
-  xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.onreadystatechange = function()
-  {
-  if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-    {
-    document.getElementById("poll4").innerHTML=xmlhttp.responseText;
-    }
-  }
-xmlhttp.open("POST","villainpoll.php",true);
-xmlhttp.send();
-}
 function getVote(int) {
   if (window.XMLHttpRequest) {
     xmlhttp=new XMLHttpRequest();
@@ -201,8 +121,7 @@ function getVote4(int) {
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-12">
-               <div id="poll">
-                  
+               <div id="poll">        
 <h4>Who Is Your Favorite James Bond?</h4>
 <form>
 Sean Connery:
@@ -222,7 +141,7 @@ Sean Connery:
 <input type="button" value="See Results" onclick="getVote(this.value)">
 </form>
 </div>                     
-<div id="poll2" onload="readVote2();">
+<div id="poll2">
 <h4>What Is Your Favorite Bond Movie?</h4>
 <form>
 Dr. No:
@@ -242,7 +161,7 @@ Dr. No:
 <input type="button" value="See Results" onclick="getVote2(this.value)">
 </form>
 </div>  
-<div id="poll3" onload="readVote3();">
+<div id="poll3">
 <h4>Who Is Your Favorite Bond Girl?</h4>
 <form>
 Vesper Lynd:
@@ -262,7 +181,7 @@ Vesper Lynd:
 <input type="button" value="See Results" onclick="getVote3(this.value)">
 </form>
 </div>  
-<div id="poll4" onload="readVote4();">
+<div id="poll4">
 <h4>Who Is Your Favorite Bond Villain?</h4>
 <form>
 Jaws:
