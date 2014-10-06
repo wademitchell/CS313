@@ -61,8 +61,8 @@ function getVote(int) {
     xmlhttp.send();
     }
     else{
-    xmlhttp.open("POST","bondpoll.php?seeresults="+int,true);
-  xmlhttp.send();
+    xmlhttp.open("GET","bondpoll.php",true);
+xmlhttp.send();
     
     }
 }
