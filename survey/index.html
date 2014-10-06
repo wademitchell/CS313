@@ -61,8 +61,8 @@ function getVote(int) {
     xmlhttp.send();
     }
     else{
-    document.getElementById("poll").innerHTML=xmlhttp.responseText;
-    xmlhttp.send();
+    xmlhttp=new XMLHttpRequest();
+    
     }
 }
 function getVote2(int) {
