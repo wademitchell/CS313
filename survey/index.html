@@ -61,7 +61,7 @@ function getVote(int) {
     xmlhttp.send();
     }
     else{
-    alert("you already voted!")
+    document.getElementById("poll").innerHTML=xmlhttp.responseText;
     }
 }
 function getVote2(int) {
