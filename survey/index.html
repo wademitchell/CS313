@@ -52,11 +52,12 @@ function getVote(int) {
   }
   xmlhttp.onreadystatechange=function() {
     if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        setCookie("voted",1,1)
       document.getElementById("poll").innerHTML=xmlhttp.responseText;
     }
   }
   xmlhttp.open("GET","bondpoll.php?vote="+int,true);
-  if(!getCookie("vote")){
+  if(!getCookie("voted")){
     xmlhttp.send();
     }
     else{
