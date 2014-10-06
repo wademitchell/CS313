@@ -61,7 +61,7 @@ function getVote(int) {
     xmlhttp.send();
     }
     else{
-    document.write('<input type="button" value="seeresults" onclick="getVote(this.value)">');
+    xmlhttp.responseText;
     
     }
 }
@@ -137,7 +137,7 @@ Sean Connery:
 <input type="radio" name="vote" value="5" onclick="getVote(this.value)">
 <br>
 <br>
-<input type="button" value="seeresults" onclick="getVote(this.value)">
+<input type="button" value="See Results" onclick="getVote(this.value)">
 </form>
 </div>                     
 <div id="poll2">
