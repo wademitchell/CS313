@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+<!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bond, James Bond</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/the-big-picture.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        function setCookie(cname,cvalue,exdays)
+{
+var d = new Date();
+d.setTime(d.getTime()+(exdays*24*60*60*1000));
+var expires = "expires="+d.toGMTString();
+document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname)
+{
+var name = cname + "=";
+var ca = document.cookie.split(';');
+for(var i=0; i<ca.length; i++)
+  {
+  var c = ca[i].trim();
+  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+}
+return "";
+}
+function getVote(int) {
+  if (window.XMLHttpRequest) {
+    xmlhttp=new XMLHttpRequest();
+  } else {  
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        setCookie("voted",1,1)
+      document.getElementById("poll").innerHTML=xmlhttp.responseText;
+    }
+  }
+  xmlhttp.open("GET","bondpoll.php?vote="+int,true);
+  if(!getCookie("voted")){
+    xmlhttp.send();
+    }
+    else{
+    alert("You have already voted and we are only accepting one vote per user for the first question. Thank you.")
+    
+    }
+}
+function getVote2(int) {
+  if (window.XMLHttpRequest) {
+    xmlhttp=new XMLHttpRequest();
+  } else {  
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("poll2").innerHTML=xmlhttp.responseText;
+    }
+  }
+  xmlhttp.open("POST","moviepoll.php?vote2="+int,true);
+  xmlhttp.send();
+}
+function getVote3(int) {
+  if (window.XMLHttpRequest) {
+    xmlhttp=new XMLHttpRequest();
+  } else {  
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("poll3").innerHTML=xmlhttp.responseText;
+    }
+  }
+  xmlhttp.open("POST","girlpoll.php?vote3="+int,true);
+  xmlhttp.send();
+}
+function getVote4(int) {
+  if (window.XMLHttpRequest) {
+    xmlhttp=new XMLHttpRequest();
+  } else {  
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("poll4").innerHTML=xmlhttp.responseText;
+    }
+  }
+  xmlhttp.open("POST","villainpoll.php?vote4="+int,true);
+  xmlhttp.send();
+}
+</script>
+</head>
+
+<body>
+   
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+               <div id="poll">        
+<h4>Who Is Your Favorite James Bond?</h4>
+<form>
+Sean Connery:
+<input type="radio" name="vote" value="0" onclick="getVote(this.value)">
+<br>George Lazenby:
+<input type="radio" name="vote" value="1" onclick="getVote(this.value)">
+<br>Roger Moore:
+<input type="radio" name="vote" value="2" onclick="getVote(this.value)">
+<br>Timothy Dalton:
+<input type="radio" name="vote" value="3" onclick="getVote(this.value)">
+<br>Pierce Brosnan:
+<input type="radio" name="vote" value="4" onclick="getVote(this.value)">
+<br>Daniel Craig:
+<input type="radio" name="vote" value="5" onclick="getVote(this.value)">
+<br>
+<br>
+<input type="button" value="See Results" onclick="getVote(this.value)">
+</form>
+</div>                     
+<div id="poll2">
+<h4>What Is Your Favorite Bond Movie?</h4>
+<form>
+Dr. No:
+<input type="radio" name="vote2" value="0" onclick="getVote2(this.value)">
+<br>On Her Majesty's Secret Service:
+<input type="radio" name="vote2" value="1" onclick="getVote2(this.value)">
+<br>Live and Let Die:
+<input type="radio" name="vote2" value="2" onclick="getVote2(this.value)">
+<br>The Living Daylights:
+<input type="radio" name="vote2" value="3" onclick="getVote2(this.value)">
+<br>Goldeneye:
+<input type="radio" name="vote2" value="4" onclick="getVote2(this.value)">
+<br>Casino Royale:
+<input type="radio" name="vote2" value="5" onclick="getVote2(this.value)">
+<br>
+<br>
+<input type="button" value="See Results" onclick="getVote2(this.value)">
+</form>
+</div>  
+<div id="poll3">
+<h4>Who Is Your Favorite Bond Girl?</h4>
+<form>
+Vesper Lynd:
+<input type="radio" name="vote3" value="0" onclick="getVote3(this.value)">
+<br>Teresa Di Vicenzo (Tracy Bond):
+<input type="radio" name="vote3" value="1" onclick="getVote3(this.value)">
+<br>Jill Masterson:
+<input type="radio" name="vote3" value="2" onclick="getVote3(this.value)">
+<br>Tatiana Romanova:
+<input type="radio" name="vote3" value="3" onclick="getVote3(this.value)">
+<br>Anya Amasova:
+<input type="radio" name="vote3" value="4" onclick="getVote3(this.value)">
+<br>Melina Havelock:
+<input type="radio" name="vote3" value="5" onclick="getVote3(this.value)">
+<br>
+<br>
+<input type="button" value="See Results" onclick="getVote3(this.value)">
+</form>
+</div>  
+<div id="poll4">
+<h4>Who Is Your Favorite Bond Villain?</h4>
+<form>
+Jaws:
+<input type="radio" name="vote4" value="0" onclick="getVote4(this.value)">
+<br>Oddjob:
+<input type="radio" name="vote4" value="1" onclick="getVote4(this.value)">
+<br>Goldfinger:
+<input type="radio" name="vote4" value="2" onclick="getVote4(this.value)">
+<br>Ernst Stavro Blofeld:
+<input type="radio" name="vote4" value="3" onclick="getVote4(this.value)">
+<br>Le Chiffre:
+<input type="radio" name="vote4" value="4" onclick="getVote4(this.value)">
+<br>Francisco Scaramanga:
+<input type="radio" name="vote4" value="5" onclick="getVote4(this.value)">
+<br>
+<br>
+<input type="button" value="See Results" onclick="getVote4(this.value)">
+</form>
+</div>  
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+    
+    <script src="js/jquery-1.11.0.js"></script>
+
+   
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

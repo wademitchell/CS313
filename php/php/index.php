@@ -68,8 +68,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Clean Top 40</h1>
-                        <p class="intro-text">Not your parent's Top 40, but a Top 40 they approve of.<br>All the current clean hits, by the most popular artists.</p>
+                        <h1 class="brand-heading">HELLO WORLD! Clean Top 40</h1>
+                        <p class="intro-text">Not your parent's Top 40, but a Top 40 they approve of.<br>All the current clean hits, by the most popular acts.</p>
                         <a href="#chart" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -112,7 +112,7 @@
                 <p><a href="http://php-wademitchell.rhcloud.com/survey/index.html">2.03 ASSIGNMENT
 PHP SURVEY</a></p>
                 <h2>We are out there.</h2>
-                <p>Follow us on Facebook, Twitter, and Spotify.</p>
+                <p>Follow us on Facebook and Twitter.</p>
                 <p>Needs to be developed.</p>
                     <ul class="list-inline banner-social-buttons">
                     <li>
