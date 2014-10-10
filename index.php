@@ -68,7 +68,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">HELLO WORLD! Clean Top 40</h1>
+                        <h1 class="brand-heading">Clean Top 40</h1>
                         <p class="intro-text">Not your parent's Top 40, but a Top 40 they approve of.<br>All the current clean hits, by the most popular acts.</p>
                         <a href="#chart" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
