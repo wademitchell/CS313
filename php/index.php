@@ -145,10 +145,10 @@ $q->setFetchMode(PDO::FETCH_ASSOC);
                 <h2>The Database</h2>
                 <p>Search <b><i>every</b></i> hit song since our creation, clean or dirty. Search by Song Grade, Genre, and Year.</p>
 
-<!--    <form action="search.php" method="GET">
+    <form action="search.php" method="GET">
         <input type="text" name="query" />
         <input type="submit" value="Search" />
-    </form>-->
+    </form>
                 
 <!--  <h2>Search</h2>  
   <form name="search" method="post" action="<ADD_ONE????????HERETOTURNONPHP=$PHP_SELF?>"> 

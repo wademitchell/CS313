@@ -1,15 +1,8 @@
 <?php
-    mysql_connect("localhost", "root", "") or die("Error connecting to database: ".mysql_error());
-    /*
-        localhost - it's location of the mysql server, usually localhost
-        root - your username
-        third is your password
-         
-        if connection fails it will stop loading the page and display an error
-    */
-     
-    mysql_select_db("tutorial_search") or die(mysql_error());
-    /* tutorial_search is the name of database we've created */
+session_start();
+    include 'dbConnector.php';
+	echo '<br><br><br><br><h2>The Database</h2>';
+	$db = loadDB();
 ?>
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -35,8 +28,8 @@
         $query = mysql_real_escape_string($query);
         // makes sure nobody uses SQL injection
          
-        $raw_results = mysql_query("SELECT * FROM articles
-            WHERE (`title` LIKE '%".$query."%') OR (`text` LIKE '%".$query."%')") or die(mysql_error());
+        $raw_results = mysql_query("SELECT * FROM clean_db
+            WHERE (`song_title` LIKE '%".$query."%') OR (`artist` LIKE '%".$query."%')") or die(mysql_error());
              
         // * means that it selects all fields, you can also write: `id`, `title`, `text`
         // articles is the name of our table
@@ -50,7 +43,7 @@
             while($results = mysql_fetch_array($raw_results)){
             // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
              
-                echo "<p><h3>".$results['title']."</h3>".$results['text']."</p>";
+                echo "<p><h3>".$results['song_title']."</h3>".$results['artist']."</p>";
                 // posts results gotten from database(title and text) you can also show id ($results['id'])
             }
              
