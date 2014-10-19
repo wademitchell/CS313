@@ -197,11 +197,6 @@ echo "<b>Searched For:</b> " .$find;
             
   <form action="results.php" method="POST" >
       
-  
-        <input type="text" name="query" />
-        <input type="submit" value="Search" />
-     
-      
   Song Grade: <select name="song_grade">
 		<option value="any">All</option>
 		<option value="A">A</option>

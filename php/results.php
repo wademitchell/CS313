@@ -84,8 +84,9 @@ session_start();
 	//Else display the chosen grade
 	else
 	{
-		$stmt = $db->prepare("SELECT * FROM clean_db WHERE song_grade=:song_grade");
+		$stmt = $db->prepare("SELECT * FROM clean_db WHERE song_grade=:song_grade AND genre=:genre");
 		$stmt->bindValue(':song_grade', $song_grade , PDO::PARAM_STR);
+                $stmt->bindValue(':genre', $genre , PDO::PARAM_STR);
 		$stmt->execute();
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
 		{
