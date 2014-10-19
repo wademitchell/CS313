@@ -1,8 +1,6 @@
 <?php
 session_start();
-    include 'dbConnector.php';
-	echo '<br><br><br><br><h2>The Database</h2>';
-	$db = loadDB();
+    
 ?>
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -14,6 +12,10 @@ session_start();
 </head>
 <body>
 <?php
+include 'dbConnector.php';
+	echo '<br><br><br><br><h2>The Database</h2>';
+	$db = loadDB();
+        
     $query = $_GET['query']; 
     // gets value sent over search form
      
