@@ -143,7 +143,7 @@ $q->setFetchMode(PDO::FETCH_ASSOC);
             <div class="col-lg-8 col-lg-offset-2">
                 
                 <h2>The Database</h2>
-                <p>Search <b><i>every</b></i> hit song since our creation, clean or dirty. Search by Song Grade, Genre, and Year.</p>
+                <p>Search <b><i>every</b></i> hit song since our creation, clean or dirty. Search by Song Grade and Year.</p>
 
     
                 
@@ -207,7 +207,7 @@ echo "<b>Searched For:</b> " .$find;
 		</select>
 		<br/><br/>
                 
-  Genre: <select name="genre">
+<!--  Genre: <select name="genre">
 		<option value="any">All</option>
                 <option value="Country">Country</option>
                 <option value="Dance/Electronic">Dance/Electronic</option>
@@ -216,7 +216,7 @@ echo "<b>Searched For:</b> " .$find;
                 <option value="Rock">Rock</option>
                 <option value="Other">Other</option>
 		</select>
-		<br/><br/>
+		<br/><br/>-->
 
   Year: <select name="year">
 		<option value="any">All</option>

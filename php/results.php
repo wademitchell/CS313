@@ -85,10 +85,8 @@ session_start();
 	else
 	{
 		$stmt = $db->prepare("SELECT * FROM clean_db WHERE song_grade=:song_grade");
-		$stmt = $db->prepare("SELECT * FROM clean_db WHERE genre=:genre");
-                $stmt->bindValue(':song_grade', $song_grade , PDO::PARAM_STR);
-                $stmt->bindValue(':genre', $genre , PDO::PARAM_STR);
-		$stmt->execute();
+		$stmt->bindValue(':song_grade', $song_grade , PDO::PARAM_STR);
+                $stmt->execute();
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
 		{
 			echo "<br><br>" . '<h5>' . $row['song_grade'] . ' - ' . $row['song_title'] . ' - ' . $row['artist'] . ' ' . $row['artist2'] . ' - ' . $row['year'] . ' - ' . $row['genre'] . ' ' . $row['genre2'] . '</h5>' . ' '.$row['note'] . ' ' . "<br>";
