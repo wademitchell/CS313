@@ -1,3 +1,21 @@
+<?php
+// Start the session
+session_start();
+	include 'dbConnector.php';
+	
+	$db = loadDB();
+        
+        $sql = 
+       'SELECT song_rank, song_title, artist, previous_week, year, genre
+        FROM clean_db
+        WHERE song_rank IS NOT NULL 
+        ORDER BY song_rank';
+ 
+$q = $db->query($sql);
+
+$q->setFetchMode(PDO::FETCH_ASSOC);
+	
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,6 +68,9 @@
                         <a class="page-scroll" href="#chart">The Chart</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="#db">The Database</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
@@ -69,7 +90,7 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Clean Top 40</h1>
-                        <p class="intro-text">Not your parent's Top 40, but a Top 40 they approve of.<br>All the current clean hits, by the most popular artists.</p>
+                        <p class="intro-text">Not your parent's Top 40, just one they approve of.<br>All the current clean hits, by the most popular artists.</p>
                         <a href="#chart" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -86,19 +107,150 @@
                 
                 <h2>Clean Top 40 Chart</h2>
                 <p>Updated weekly, here are the cleanest, most popular hits from today's top artists.</p>
+           
+<table class="table table-bordered table-condensed">
+        <col style="width:10%">
+        <col style="width:10%">
+        <col style="width:40%">
+        <col style="width:40%">
+ <thead>
+ <tr>
+ <th>This Week</th>
+ <th>Last Week</th>
+ <th>Song</th>
+ <th>Artist</th>
+ </tr>
+ </thead>
+ <tbody>
+ <?php while ($r = $q->fetch()): ?>
+ <tr>
+ <td><?php echo htmlspecialchars($r['song_rank'])?></td>
+ <td><?php echo htmlspecialchars($r['previous_week'])?></td>
+ <td><?php echo htmlspecialchars($r['song_title']); ?></td>
+ <td><?php echo htmlspecialchars($r['artist']); ?></td>
+ </tr>
+ <?php endwhile; ?>
+ </tbody>
+</table>
+                
             </div>
         </div>
     </section>
 
+    <!-- Database Section -->
+    <section id="db" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                
+                <h2>The Database</h2>
+                <p>Search <b><i>every</b></i> hit song since our creation, clean or dirty. Search by Song Grade, Genre, and Year.</p>
+
+<!--    <form action="search.php" method="GET">
+        <input type="text" name="query" />
+        <input type="submit" value="Search" />
+    </form>-->
+                
+<!--  <h2>Search</h2>  
+  <form name="search" method="post" action="<ADD_ONE????????HERETOTURNONPHP=$PHP_SELF?>"> 
+      Seach for: <input type="text" name="find" /> in  
+      <Select NAME="field"> 
+          <Option VALUE="song_title">Song</option> 
+          <Option VALUE="artist">Artist</option> 
+          
+      </Select> <input type="hidden" name="searching" value="yes" /> 
+      <input type="submit" name="search" value="Search" /> 
+  </form>     
+  
+  <?  //This is only displayed if they have submitted the form  
+  if ($searching =="yes")  
+  {  
+  echo "<h2>Results</h2><p>";   
+  //If they did not enter a search term we give them an error  
+  if ($find == "")  
+  {  
+  echo "<p>You forgot to enter a search term";  
+  exit;  
+  }   
+// We preform a bit of filtering  
+$find = strtoupper($find);  
+$find = strip_tags($find);  
+$find = trim ($find);   
+//Now we search for our search term, in the field the user specified  
+$data = mysql_query("SELECT * FROM clean_db WHERE upper($field) 
+LIKE'%$find%'");   
+//And we display the results  
+while($result = mysql_fetch_array( $data ))  
+{  
+echo $result['song_title'];  
+echo " ";  
+echo $result['artist'];    
+echo "<br>";  
+echo "<br>";  
+}   
+//This counts the number or results - and if there wasn't any it gives them a little message explaining that  
+$anymatches=mysql_num_rows($data);  
+if ($anymatches == 0)  
+{
+echo "Sorry, but we can not find an entry to match your query<br><br>";  
+}
+//And we remind them what they searched for  
+echo "<b>Searched For:</b> " .$find;  
+}
+?>-->
+            
+  <form action="results.php" method="POST" >
+  Song Grade: <select name="song_grade">
+		<option value="any">All</option>
+		<option value="A">A</option>
+		<option value="B">B</option>
+		<option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+		</select>
+		<br/><br/>
+                
+  Genre: <select name="genre">
+		<option value="any">All</option>
+                <option value="Country">Country</option>
+                <option value="Dance/Electronic">Dance/Electronic</option>
+                <option value="Pop">Pop</option>
+		<option value="R&B/Hip-Hop">R&B/Hip-Hop</option>
+                <option value="Rock">Rock</option>
+                <option value="Other">Other</option>
+		</select>
+		<br/><br/>
+
+  Year: <select name="year">
+		<option value="any">All</option>
+                <option value="2014">2014</option>
+		</select>
+		<br/><br/>              
+                
+    <input type="submit" value="Submit">
+    </form>
+                
+            </div>
+        </div>
+    </section>
+    
     <!-- About Section -->
-    <section id="About" class="content-section text-center">
+    <section id="about" class="content-section text-center">
         <div class="about-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h2>About Wade</h2>
-                    <p>Hi, I'm Wade Mitchell. I'm a Web Development & Deign major with BYUI. I currently live in Oregon. This is my CS 313 project.</p>
-                    <h2>Why clean hits?</h2>
-                    <p>We are prudes.</p>
+                    <h2>About Clean Top 40</h2>
+                    <p>Hi, I'm Wade Mitchell. I currently live in Oregon. I'm a music lover and a prude (not really). I'm a Web Design & Development major with BYU-I. This is my CS 313 project.</p>
+                    
+                <p>Follow Clean Top 40 on Facebook, Twitter, and Spotify.</p>
+                <p>(Needs to be developed)</p>
+                    <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/wademitchell/CS313" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                </ul>
                 </div>
             </div>
         </div>
@@ -111,17 +263,7 @@
                 <h2>Assignments</h2>
                 <p><a href="http://php-wademitchell.rhcloud.com/survey/index.html">2.03 ASSIGNMENT
 PHP SURVEY</a></p>
-                <h2>We are out there.</h2>
-                <p>Follow us on Facebook, Twitter, and Spotify.</p>
-                <p>Needs to be developed.</p>
-                    <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/wademitchell/CS313" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                </ul>
+                
             </div>
         </div>
     </section>

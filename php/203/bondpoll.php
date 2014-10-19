@@ -6,7 +6,13 @@
 //Store the results on the filesystem so they can be retrieved/added to later.
 //If the user returns to the question page after they have voted, they should be automatically directed to the results. (Think sessions)
 
+session_start();
+
+echo $_SESSION ['seeresults'];
+
 $vote = $_REQUEST['vote'];
+
+
 
 //get content of textfile
 $filename = "poll_result.txt";

@@ -1,3 +1,10 @@
+<?php
+// Start the session
+session_start();
+
+$_SESSION ['seeresults'] = $_REQUEST['voteresults'];
+
+?>
 <!DOCTYPE html>
 <html class="full" lang="en">
 <!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
@@ -25,25 +32,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script>
-        function setCookie(cname,cvalue,exdays)
-{
-var d = new Date();
-d.setTime(d.getTime()+(exdays*24*60*60*1000));
-var expires = "expires="+d.toGMTString();
-document.cookie = cname + "=" + cvalue + "; " + expires;
-}
 
-function getCookie(cname)
-{
-var name = cname + "=";
-var ca = document.cookie.split(';');
-for(var i=0; i<ca.length; i++)
-  {
-  var c = ca[i].trim();
-  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
-}
-return "";
-}
 function getVote(int) {
   if (window.XMLHttpRequest) {
     xmlhttp=new XMLHttpRequest();
@@ -52,19 +41,15 @@ function getVote(int) {
   }
   xmlhttp.onreadystatechange=function() {
     if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-        setCookie("voted",1,1)
+        
       document.getElementById("poll").innerHTML=xmlhttp.responseText;
     }
   }
-  xmlhttp.open("GET","bondpoll.php?vote="+int,true);
-  if(!getCookie("voted")){
+  xmlhttp.open("POST","bondpoll.php?vote="+int,true);
+  
     xmlhttp.send();
     }
-    else{
-    alert("You have already voted and we are only accepting one vote per user for the first question. Thank you.")
     
-    }
-}
 function getVote2(int) {
   if (window.XMLHttpRequest) {
     xmlhttp=new XMLHttpRequest();
@@ -111,7 +96,10 @@ function getVote4(int) {
 </head>
 
 <body>
-   
+ 
+ 
+
+    
         </div>
         <!-- /.container -->
     </nav>
@@ -123,6 +111,8 @@ function getVote4(int) {
                <div id="poll">        
 <h4>Who Is Your Favorite James Bond?</h4>
 <form>
+    
+
 Sean Connery:
 <input type="radio" name="vote" value="0" onclick="getVote(this.value)">
 <br>George Lazenby:
@@ -137,7 +127,7 @@ Sean Connery:
 <input type="radio" name="vote" value="5" onclick="getVote(this.value)">
 <br>
 <br>
-<input type="button" value="See Results" onclick="getVote(this.value)">
+<input type="button" name "voteresults" value="See Results" onclick="getVote(this.value)">
 </form>
 </div>                     
 <div id="poll2">
