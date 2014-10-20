@@ -143,7 +143,8 @@ $q->setFetchMode(PDO::FETCH_ASSOC);
             <div class="col-lg-8 col-lg-offset-2">
                 
                 <h2>The Database</h2>
-                <p>Search <b><i>every</b></i> hit song since our creation, clean or dirty. Search by Song Grade and Year.</p>
+                <p>Search <b><i>every</b></i> hit song since our creation, clean or dirty. Filter search by Song Grade, Genre, and Year.</p>
+                <p>A great test for this is to to leave all to "All" to see the entire database, then search for an A grade Pop song.</p>
 
             
   <form action="results.php" method="POST" >
