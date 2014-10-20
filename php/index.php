@@ -145,55 +145,6 @@ $q->setFetchMode(PDO::FETCH_ASSOC);
                 <h2>The Database</h2>
                 <p>Search <b><i>every</b></i> hit song since our creation, clean or dirty. Search by Song Grade and Year.</p>
 
-    
-                
-<!--  <h2>Search</h2>  
-  <form name="search" method="post" action="<ADD_ONE????????HERETOTURNONPHP=$PHP_SELF?>"> 
-      Seach for: <input type="text" name="find" /> in  
-      <Select NAME="field"> 
-          <Option VALUE="song_title">Song</option> 
-          <Option VALUE="artist">Artist</option> 
-          
-      </Select> <input type="hidden" name="searching" value="yes" /> 
-      <input type="submit" name="search" value="Search" /> 
-  </form>     
-  
-  <?  //This is only displayed if they have submitted the form  
-  if ($searching =="yes")  
-  {  
-  echo "<h2>Results</h2><p>";   
-  //If they did not enter a search term we give them an error  
-  if ($find == "")  
-  {  
-  echo "<p>You forgot to enter a search term";  
-  exit;  
-  }   
-// We preform a bit of filtering  
-$find = strtoupper($find);  
-$find = strip_tags($find);  
-$find = trim ($find);   
-//Now we search for our search term, in the field the user specified  
-$data = mysql_query("SELECT * FROM clean_db WHERE upper($field) 
-LIKE'%$find%'");   
-//And we display the results  
-while($result = mysql_fetch_array( $data ))  
-{  
-echo $result['song_title'];  
-echo " ";  
-echo $result['artist'];    
-echo "<br>";  
-echo "<br>";  
-}   
-//This counts the number or results - and if there wasn't any it gives them a little message explaining that  
-$anymatches=mysql_num_rows($data);  
-if ($anymatches == 0)  
-{
-echo "Sorry, but we can not find an entry to match your query<br><br>";  
-}
-//And we remind them what they searched for  
-echo "<b>Searched For:</b> " .$find;  
-}
-?>-->
             
   <form action="results.php" method="POST" >
       
@@ -207,7 +158,7 @@ echo "<b>Searched For:</b> " .$find;
 		</select>
 		<br/><br/>
                 
-<!--  Genre: <select name="genre">
+  Genre: <select name="genre">
 		<option value="any">All</option>
                 <option value="Country">Country</option>
                 <option value="Dance/Electronic">Dance/Electronic</option>
@@ -216,7 +167,7 @@ echo "<b>Searched For:</b> " .$find;
                 <option value="Rock">Rock</option>
                 <option value="Other">Other</option>
 		</select>
-		<br/><br/>-->
+		<br/><br/>
 
   Year: <select name="year">
 		<option value="any">All</option>
