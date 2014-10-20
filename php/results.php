@@ -120,7 +120,7 @@ session_start();
 	}
 ?>
 
-<form action="index.php" method="POST" >
+<form action="index.php#db" method="POST" >
 	<br/>
     <input type="submit" value="Back">
 </form>  
