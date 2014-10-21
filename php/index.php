@@ -211,8 +211,12 @@ $q->setFetchMode(PDO::FETCH_ASSOC);
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Assignments</h2>
-                <p><a href="http://php-wademitchell.rhcloud.com/survey/index.html">2.03 ASSIGNMENT
+                <p><a href="http://php-wademitchell.rhcloud.com/203/index.html">2.03 ASSIGNMENT
 PHP SURVEY</a></p>
+ <p><a href="http://php-wademitchell.rhcloud.com/402/scriptures.php">4.02 ASSIGNMENT
+SCRIPTURES</a></p>
+<p><a href="http://php-wademitchell.rhcloud.com/502/scriptures.php">5.02 ASSIGNMENT
+SCRIPTURES 2.0</a></p>
                 
             </div>
         </div>
