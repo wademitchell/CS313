@@ -12,8 +12,8 @@ if ($_POST)
     
     
  {
-    $query = "INSERT INTO 'scriptures' ('book', 'chapter', 'verse', 'content')
-            VALUES ('$book', '$chapter', '$verse', '$content');";
+    $query = "INSERT INTO scriptures (book, chapter, verse, content)
+            VALUES ('$book', '$chapter', '$verse', '$content')";
     
     mysql_query($query);
 
