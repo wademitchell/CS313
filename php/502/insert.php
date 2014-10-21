@@ -8,18 +8,25 @@ session_start();
         $verse = $_POST['verse'];
         $content = $_POST['content'];
         
+if ($_POST)
+    
+    
+ {
+    $query = "INSERT INTO 'scriptures' ('book', 'chapter', 'verse', 'content')
+            VALUES ('$book', '$chapter', '$verse', '$content');";
+    
+    mysql_query($query);
 
-//// escape variables for security
-//$book = mysqli_real_escape_string($con, $_POST['book']);
-//$chapter = mysqli_real_escape_string($con, $_POST['chapter']);
-//$verse = mysqli_real_escape_string($con, $_POST['verse']);
-//$content = mysqli_real_escape_string($con, $_POST['content']);
-
-if ($POST)
-{
-    $stmt = $db->prepare("INSERT INTO scriptures (book, chapter, verse, content)
-            VALUES ('$book', '$chapter', '$verse', '$content')");
-}
+  echo "<h2>Your Scripture has been added.</h2>";
+}   
+    
+    
+    
+    
+//{
+//    $stmt = $db->prepare("INSERT INTO scriptures (book, chapter, verse, content)
+//            VALUES ('$book', '$chapter', '$verse', '$content')");
+//}
     
     
     
