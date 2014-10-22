@@ -24,11 +24,8 @@ VALUES (:book, :chapter, :verse, :content)';
 
   echo "<h2>Your Scripture has been added.</h2>";
     }
-//    catch (PDOException $ex)
-//    {
-//    echo 'error';
-//    }
     
+    header( 'Location: http://php-wademitchell.rhcloud.com/502/display.php' ) ;
     
 ?>
 
