@@ -1,10 +1,9 @@
  <?php
 	
 	include 'dbConnector.php';
-	echo '<br><br><br><br><h2>Scripture Master List</h2>';
+	echo '<br><h2>Scripture Master List</h2>';
 	$db = loadDB();
-	$book = $_POST['book'];
-        $chapter = $_POST['chapter'];
+	
 	//Display all scriptures
 	if ($book == '')
 	{
@@ -15,13 +14,13 @@
 			echo '<strong>' . $row['book'].' '.$row['chapter'] . ':' . $row['verse'] . '</strong>' .' - "'. $row['content'] . '"' . "<br>";
 		}
                 
-                $stmt2 = $db->prepare("SELECT name FROM topic");
+                $stmt2 = $db->prepare('SELECT name FROM topic t' . ' INNER JOIN junction j ON j.topic_id = t.topic_id' . 'WHERE j.id = :id');
                         $stmt2>-bindParm(':id', $row['topic_id']);
                         $stmt2->execute();
                         
                         while ($topic_row = $stmt2->fetch(PDO::FETCH_ASSOC))
                         {
-                            echo $topic_row['name'];
+                            echo $topic_row['name'] . ' ';
                         }
                 
 	}
