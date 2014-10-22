@@ -12,7 +12,7 @@
 		
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
 		{
-			echo "<br><br>" . '<h5>' . $row['book'] . ' - ' . $row['chapter'] . ' - ' . $row['verse'] . ' ' . $row['content'] . ' ' . "<br>";
+			echo '<strong>' . $row['book'].' '.$row['chapter'] . ':' . $row['verse'] . '</strong>' .' - "'. $row['content'] . '"' . "<br>";
 		}
 	}
 //	//Else display the chosen grade

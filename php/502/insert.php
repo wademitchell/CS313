@@ -7,32 +7,29 @@ session_start();
         $chapter = $_POST['chapter'];
         $verse = $_POST['verse'];
         $content = $_POST['content'];
-        
-if ($_POST)
+        $topic_id = $_POST['topic_id'];
+
+    if ($_POST)
+    {
+    $query = 'INSERT INTO scriptures (book, chapter, verse, content)
+VALUES (:book, :chapter, :verse, :content)';
     
-    
- {
-    $query = "INSERT INTO scriptures (book, chapter, verse, content)
-            VALUES ('$book', '$chapter', '$verse', '$content')";
-    
-    mysql_query($query);
+    $statement = $db->prepare($query);
+
+	$statement->bindParam(':book', $book);
+	$statement->bindParam(':chapter', $chapter);
+	$statement->bindParam(':verse', $verse);
+	$statement->bindParam(':content', $content);
+	$statement->execute();
 
   echo "<h2>Your Scripture has been added.</h2>";
-}   
+    }
+//    catch (PDOException $ex)
+//    {
+//    echo 'error';
+//    }
     
     
-    
-    
-//{
-//    $stmt = $db->prepare("INSERT INTO scriptures (book, chapter, verse, content)
-//            VALUES ('$book', '$chapter', '$verse', '$content')");
-//}
-    
-    
-    
-    
-    
-
 ?>
 
 <form action="display.php" method="POST" >
