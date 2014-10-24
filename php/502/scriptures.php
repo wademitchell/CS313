@@ -16,34 +16,55 @@ Book: <input type="text" name="book">
 Chapter: <input type="number" name="chapter">
 Verse: <input type="number" name="verse">
 Content: <input type="text" name="content">
-Topics: 
+Topics: <input type="checkbox" name="topic_id[]" value="Faith" />
+<input type="checkbox" name="topic_id[]" value="Sacrifice" />
+<input type="checkbox" name="topic_id[]" value="Charity" />
 <br>
 
 <?php
-
-try
-{
-    include 'dbConnector.php';
-    $db = loadDB();
+include 'dbConnector.php';
+$db = loadDB();
 
 	$statement = $db->prepare('SELECT topic_id, name FROM topics');
 	$statement->execute();
+        
+if( isset($_POST['topic_id']) && is_array($_POST['topic_id']) ) 
+    {
+    
+    foreach($_POST['topic_id'] as $topic_id) {
+        // eg. "I have a grapefruit!"
+        echo "Have {$topic_id}!";
+        // -- insert into database call might go here
+    }
 
-	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-	{
-		echo '<input type="checkbox" name="topic_id" value="' . $row['topic_id'] . '">';
-                echo $row['name'];
-                echo '</input><br />';
-	
-        echo "\n";
+    // eg. "apple, grapefruit"
+    $id = implode(', ', $_POST['topic_id']);
+    // -- insert into database call (for fruitList) might go here.
 }
 
-}
-catch (PDOException $ex)
-{
-	echo "ERROR";
-	die();
-}
+//try
+//{
+//    include 'dbConnector.php';
+//    $db = loadDB();
+//
+//	$statement = $db->prepare('SELECT topic_id, name FROM topics');
+//	$statement->execute();
+//
+//	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+//	{
+//		echo '<input type="checkbox" name="topic_id" value="' . $row['topic_id'] . '">';
+//                echo $row['name'];
+//                echo '</input><br />';
+//	
+//        echo "\n";
+//}
+//
+//}
+//catch (PDOException $ex)
+//{
+//	echo "ERROR";
+//	die();
+//}
 
 ?>
 <!--<input type="checkbox" name="name" value="Faith" >Faith<br>
