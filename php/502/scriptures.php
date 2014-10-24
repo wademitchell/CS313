@@ -16,27 +16,27 @@ Book: <input type="text" name="book">
 Chapter: <input type="number" name="chapter">
 Verse: <input type="number" name="verse">
 Content: <input type="text" name="content">
-Topic: 
+Topics: 
 <br>
 
 <?php
 
-
-include 'dbConnector.php';
-$db = loadDB();
-
 try
 {
+    include 'dbConnector.php';
+    $db = loadDB();
 
-	$statement = $db->prepare('SELECT id, name FROM topic');
+	$statement = $db->prepare('SELECT topic_id, name FROM topics');
 	$statement->execute();
 
 	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	{
-		echo '<input type="checkbox" name="name" value="Faith" >Faith<br>' . $row['id'] . '">' . $row['name'] . '</input><br />\n';
-                echo '<input type="checkbox" name="name" value="Sacrifice">Sacrifice<br>' . $row['id'] . '">' . $row['name'] . '</input><br />\n';
-                echo '<input type="checkbox" name="name" value="Charity">Charity' . $row['id'] . '">' . $row['name'] . '</input><br />\n';
-	}
+		echo '<input type="checkbox" name="topic_id[]" value="' . $row['topic_id'] . '">';
+                echo $row['name'];
+                echo '</input><br />';
+	
+        echo "\n";
+}
 
 }
 catch (PDOException $ex)
@@ -50,7 +50,7 @@ catch (PDOException $ex)
 <input type="checkbox" name="name" value="Sacrifice">Sacrifice<br>
 <input type="checkbox" name="name" value="Charity">Charity-->
 <br>
-<input type="submit">
+<input type="submit" value="Add Scripture">
 </form>
     </div>
 </body>
