@@ -31,7 +31,7 @@ try
 
 	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	{
-		echo '<input type="checkbox" name="topic_id[]" value="' . $row['topic_id'] . '">';
+		echo '<input type="checkbox" name="topic_id" value="' . $row['topic_id'] . '">';
                 echo $row['name'];
                 echo '</input><br />';
 	

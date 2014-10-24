@@ -22,7 +22,18 @@ VALUES (:book, :chapter, :verse, :content)';
 	$statement->bindParam(':content', $content);
 	$statement->execute();
 
-  echo "<h2>Your Scripture has been added.</h2>";
+  $id = $db->lastInsertId();
+  foreach ($topic_id as $topic_id)
+  {
+      $statement = $db->prepare('INSERT INTO junction(id, topic_id) VALUES(:id, :topic_id)');
+  
+      $statement->bindParam(':id', $id);
+      $statement->bindParam('topic_id', $topic_id);
+      
+      $statement->execute();
+      
+      
+  }
     }
     
     header( 'Location: http://php-wademitchell.rhcloud.com/502/display.php' ) ;
