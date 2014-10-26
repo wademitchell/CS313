@@ -24,12 +24,16 @@ Topics: <input type="checkbox" name="topic_id[]" value="Faith" />
 <?php
 include 'dbConnector.php';
 $db = loadDB();
-
-	$statement = $db->prepare('SELECT topic_id, name FROM topics');
-	$statement->execute();
         
+
+
+
+
 if( isset($_POST['topic_id']) && is_array($_POST['topic_id']) ) 
     {
+    
+    $statement = $db->prepare('SELECT topic_id, name FROM topics');
+$statement->execute();
     
     foreach($_POST['topic_id'] as $topic_id) {
         // eg. "I have a grapefruit!"
@@ -38,7 +42,7 @@ if( isset($_POST['topic_id']) && is_array($_POST['topic_id']) )
     }
 
     // eg. "apple, grapefruit"
-    $id = implode(', ', $_POST['topic_id']);
+    $topiclist = implode(', ', $_POST['topic_id']);
     // -- insert into database call (for fruitList) might go here.
 }
 

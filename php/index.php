@@ -144,7 +144,6 @@ $q->setFetchMode(PDO::FETCH_ASSOC);
                 
                 <h2>The Database</h2>
                 <p>Search <b><i>every</b></i> hit song since our creation, clean or dirty. Filter search by Song Grade, Genre, and Year.</p>
-                <p>A great test for this is to to leave all to "All" to see the entire database, then search for an A grade Pop song.</p>
 
             
   <form action="results.php" method="POST" >
@@ -178,8 +177,44 @@ $q->setFetchMode(PDO::FETCH_ASSOC);
                 
     <input type="submit" value="Submit">
     </form>
-                
+               
             </div>
+        </div>
+    </section>
+    
+     <!-- FORM Section -->
+    <section id="form" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                
+                <h2>Missing A Song?</h2>
+                <p>Add it here.</p>
+
+        <form action="insert.php" method="post">
+            Song: <input type="text" name="song_title"><br></br>
+            Artist: <input type="text" name="artist"><br></br>
+            Grade: <select name="song_grade">
+                   <option value="A" <?php if($song_grade == "A") { echo "SELECTED"; } ?>>A</option>
+                   <option value="B" <?php if($song_grade == "B") { echo "SELECTED"; } ?>>B</option>
+                   <option value="C" <?php if($song_grade == "C") { echo "SELECTED"; } ?>>C</option>
+                   <option value="D" <?php if($song_grade == "D") { echo "SELECTED"; } ?>>D</option>
+                   <option value="F" <?php if($song_grade == "F") { echo "SELECTED"; } ?>>F</option>
+                   </select><br></br>
+            Genre: <select name="genre">
+                   <option value="Country" <?php if($genre == "Country") { echo "SELECTED"; } ?>>Country</option>
+                   <option value="Dance/Electronic" <?php if($genre == "Dance/Electronic") { echo "SELECTED"; } ?>>Dance/Electronic</option>
+                   <option value="Pop" <?php if($genre == "Pop") { echo "SELECTED"; } ?>>Pop</option>
+                   <option value="R&B/Hip-Hop" <?php if($genre == "R&B/Hip-Hop") { echo "SELECTED"; } ?>>R&B/Hip-Hop</option>
+                   <option value="Rock" <?php if($genre == "Rock") { echo "SELECTED"; } ?>>Rock</option>
+                   <option value="Other" <?php if($genre == "Other") { echo "SELECTED"; } ?>>Other</option>
+                   </select><br></br>
+            Year: <input type="number" name="year"><br></br>
+            Note: <input type="text" name="note"><br>
+            <br>
+            <input type="submit" value="Add Song">
+        </form>
+                
+                </div>
         </div>
     </section>
     
