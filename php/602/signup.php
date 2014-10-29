@@ -17,34 +17,34 @@
 
 	   <script> 
        
-    function checkPass(form)
+function checkPass()
 {
-  re = /^[\d]{7}$/;
-  if(re.test(form.password1.value) == false) {
-    alert("Password must contain at least one number and 7 characters");
-    form.password1.focus();
-    return false;
+  var re_num = /\d/;
+  if(re_num.test(document.getElementById('password1').value) == false) {
+    alert("Password must contain at least one number");
+    document.getElementById('password1').focus();
+  } 
+  if(document.getElementById('password1').value.length < 7) {
+    alert("Password must have at least 7 characters");
+    document.getElementById('password1').focus();
   }  
-  return true;
 }
 
-function confirmPass(form)
+function confirmPass()
 {
-  if(form.password2.focus.value = "")
+  if(document.getElementById('password2').value != document.getElementById('password1').value) {
     alert("Please confirm your password");
-    form.password2.focus();
-    return false;
+    document.getElementById('password2').focus();
   }
-
 }
 
 </script>
 
 <label for="password1">Password:</label>
-        <input type="password" id="password1" name="password" onchange="return checkPass(this);"></input>
+        <input type="password" id="password1" name="password" onchange="checkPass()"></input>
   <br /><br />
-<label for="password2">Password:</label>
-        <input type="password" id="password2" name="password" onchange="return confirmPass(this);"></input>
+<label for="password2">Confirm Password:</label>
+        <input type="password" id="password2" name="password" onchange="confirmPass()"></input>
   <br /><br />
 
 	<input type="submit" value="Register For The Scripture Database" />
