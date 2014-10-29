@@ -252,7 +252,7 @@ PHP SURVEY</a></p>
 SCRIPTURES</a></p>
 <p><a href="http://php-wademitchell.rhcloud.com/502/scriptures.php">5.02 ASSIGNMENT
 SCRIPTURES 2.0</a></p>
-<p><a href="http://php-wademitchell.rhcloud.com/502/scriptures.php">6.02 SIMPLE LOGIN</a></p>
+<p><a href="http://php-wademitchell.rhcloud.com/602/scriptures.php">6.02 SIMPLE LOGIN</a></p>
                 
             </div>
         </div>

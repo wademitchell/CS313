@@ -64,13 +64,6 @@ if (isset($_POST['username']) && isset($_POST['password']))
 <body>
 <div>
 
-<?php
-if ($wrong)
-{
-	echo "The username or password is not correct. Try again or Register below.";
-}
-?>
-
 <h1>Sign In To Access The Database</h1>
 
 <form id="form" action="signin.php" method="POST">
@@ -84,6 +77,13 @@ if ($wrong)
 		<br /><br />
 
 	<input type="submit" value="Sign In" />
+        
+        <?php
+if ($wrong)
+{
+	echo '<br><div style="color:red;">The username or password is not correct. Try again or Register.</div>';
+}
+?>
 
 </form>
 
