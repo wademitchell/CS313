@@ -11,12 +11,12 @@
 
 <form id="form" action="signupinsert.php" method="POST">
 
-	<input type="text" id="username" name="username"></input>
-	<label for="username">Username</label>
+<label for="username">Username:</label>	
+    <input type="text" id="username" name="username"></input>
 	<br /><br />
 
-	<input type="password" id="password" name="password"></input>
-	<label for="password">Password</label>
+	<label for="password">Password:</label>
+        <input type="password" id="password" name="password"></input>
 	<br /><br />
 
 	<input type="submit" value="Register For The Scripture Database" />

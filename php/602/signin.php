@@ -75,13 +75,13 @@ if ($wrong)
 
 <form id="form" action="signin.php" method="POST">
 
-	<input type="text" id="username" name="username"></input>
-	<label for="username">Username</label>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"></input>
 	<br /><br />
 
-	<input type="password" id="password" name="password"></input>
-	<label for="password">Password</label>
-	<br /><br />
+	<label for="password">Password:</label>
+        <input type="password" id="password" name="password"></input>
+		<br /><br />
 
 	<input type="submit" value="Sign In" />
 
@@ -89,7 +89,7 @@ if ($wrong)
 
 <br /><br />
 
-<a href="signup.php">Register</a>
+<a href="signup.php">No Login? Register Here</a>
 
 </div>
 
