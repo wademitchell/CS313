@@ -1,6 +1,17 @@
 <?php
-// Start the session
+
 session_start();
+
+if (isset($_SESSION['username']))
+{
+	$username = $_SESSION['username'];
+}
+else
+{
+	header("Location: signin.php");
+	die(); 
+}
+
 	include 'dbConnector.php';
 	
 	$db = loadDB();
@@ -90,7 +101,9 @@ $q->setFetchMode(PDO::FETCH_ASSOC);
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Clean Top 40</h1>
-                        <p class="intro-text">Not your parent's Top 40, just one they approve of.<br>All the current clean hits, by the most popular artists.</p>
+                        <p class="intro-text">Hey <?= $username ?>! (Not <?=$username?>? <a href="logout.php">Logout</a>)</p>
+                        <p>Welcome to the Clean Top 40. Not your parent's Top 40...<br>
+                        just one they approve of.<br>All the current clean hits, by the most popular artists.</p>
                         <a href="#chart" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
