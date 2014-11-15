@@ -119,6 +119,7 @@ if (isset($_POST['username']) && isset($_POST['password']))
 
                 <h2>Sign In To The Greatest Music Database In The</h2>
                 <h1>Universe</h1>
+                <p>Test with Username: Prude Password: mycs313</p>
 
 <form id="form" action="signin.php" method="POST">
 

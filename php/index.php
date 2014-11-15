@@ -119,7 +119,7 @@ $q->setFetchMode(PDO::FETCH_ASSOC);
             <div class="col-lg-8 col-lg-offset-2">
                 
                 <h2>Clean Top 40 Chart</h2>
-                <p>Updated weekly, here are the cleanest, most popular hits from today's top artists.</p>
+                <p>Here are the cleanest, most popular hits from today's top artists.<br>Updated weekly.</p>
            
 <table class="table table-bordered table-condensed">
         <col style="width:10%">
@@ -261,11 +261,12 @@ $q->setFetchMode(PDO::FETCH_ASSOC);
                 <h2>Assignments</h2>
                 <p><a href="http://php-wademitchell.rhcloud.com/203/index.html">2.03 ASSIGNMENT
 PHP SURVEY</a></p>
- <p><a href="http://php-wademitchell.rhcloud.com/402/scriptures.php">4.02 ASSIGNMENT
-SCRIPTURES</a></p>
-<p><a href="http://php-wademitchell.rhcloud.com/502/scriptures.php">5.02 ASSIGNMENT
-SCRIPTURES 2.0</a></p>
+ <p><a href="http://php-wademitchell.rhcloud.com/402/scriptures.php">4.02 ASSIGNMENT SCRIPTURES</a></p>
+<p><a href="http://php-wademitchell.rhcloud.com/502/scriptures.php">5.02 ASSIGNMENT SCRIPTURES 2.0</a></p>
 <p><a href="http://php-wademitchell.rhcloud.com/602/scriptures.php">6.02 SIMPLE LOGIN</a></p>
+<p><a href="http://jbossews-wademitchell.rhcloud.com/HelloWorld/HelloServlet">7.03 TOMCAT AND SERVLET</a></p>
+<p><a href="http://jbossews-wademitchell.rhcloud.com/802/index.jsp">8.03 JSP DISCUSSION THREAD</a></p>
+
                 
             </div>
         </div>
